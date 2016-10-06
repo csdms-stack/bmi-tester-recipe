@@ -1,0 +1,36 @@
+{% set name = "bmi-tester" %}
+{% set version = "0.1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/csdms/bmi-tester
+
+requirements:
+  build:
+    - python
+    - numpy
+  run:
+    - python
+    - numpy
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  entry_points:
+    - bmi-tester = bmi_tester.cmd:main
+
+test:
+  imports:
+    - bmi_tester
+  commands:
+    - bmi-tester -h
+
+about:
+  home: https://github.com/csdms/bmi-tester
+  license: MIT
+  license_file: LICENSE
+  summary: Test a Python BMI implementation
+  dev_url: https://github.com/csdms/bmi-tester
