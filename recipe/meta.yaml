@@ -12,9 +12,11 @@ requirements:
   build:
     - python
     - numpy
+    - nose
   run:
     - python
     - numpy
+    - nose
 
 build:
   number: 0
