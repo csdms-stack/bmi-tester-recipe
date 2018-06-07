@@ -16,7 +16,7 @@ requirements:
     - numpydoc
     - nose
     - numpy
-    - cfunits
+    - cfunits-python
     - standard_names
     - pytest
 
@@ -26,7 +26,7 @@ requirements:
     - numpydoc
     - nose
     - numpy
-    - cfunits
+    - cfunits-python
     - standard_names
     - pytest
 
