@@ -41,8 +41,7 @@ test:
   imports:
     - bmi_tester
   commands:
-    - bmi-tester -h
-    - bmi-nose -h
+    - bmi-test -h
 
 
 about:
