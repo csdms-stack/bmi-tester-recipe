@@ -1,13 +1,14 @@
 {% set name = "bmi-tester" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/csdms/bmi-tester
-  git_tag: v{{ version }}
+  url: https://github.com/csdms/bmi-tester/archive/v{{ version }}.tar.gz
+  sha256: 2bd32dc2c7f005af848df7a3fd230a565bafc17576c55cb3fe8d7c505789fdf2
+  fn: {{ name }}-{{ version }}.tar.gz
 
 requirements:
   build:
@@ -33,16 +34,14 @@ requirements:
 build:
   number: 0
   entry_points:
-    - bmi-tester = bmi_tester.cmd:main
-    - bmi-test = bmi_tester.bmipytest:main
-  script: python setup.py install --single-version-externally-managed --record record.txt
+    - bmi-test=bmi_tester.bmipytest:main
+  script: python -m pip install --no-deps --ignore-installed .
 
 test:
   imports:
     - bmi_tester
   commands:
     - bmi-test -h
-
 
 about:
   home: https://github.com/csdms/bmi-tester
