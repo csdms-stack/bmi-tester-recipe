@@ -1,3 +1,7 @@
+This repository has been archived.
+The *bmi-tester* package is now [built](https://github.com/conda-forge/bmi-tester-feedstock) on conda-forge.
+
+```
 # Current Build Status
 
 Linux, OSX: [![Build
@@ -29,4 +33,6 @@ platform with:
 
 ```
 $ conda search bmi-tester --channel csdms
+```
+
 ```
